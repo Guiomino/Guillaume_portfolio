@@ -1,0 +1,57 @@
+.title {
+    margin: 100px auto 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-shadow: 0px 0px 8px #22EFFC;
+}
+
+.cardSkills {
+    margin: 50px auto 0;
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: radial-gradient(ellipse at top, #22EFFC11, transparent),
+        radial-gradient(ellipse at bottom, #ffffff11, transparent);
+    padding: 30px;
+    border-radius: 3px;
+}
+
+
+.cardSkills ul {
+    display: flex;
+    gap: 50px;
+}
+
+.cardSkills li {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.cardSkills i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #22EFFC;
+    font-size: 24px;
+    padding: 10px;
+    border: 1px solid #22EFFC;
+    border-radius: 3px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.cardSkills i:hover {
+    color: white;
+    border: 1px solid white;
+    background-color: #ffffff22;
+    box-shadow: 0px 0px 12px #22EFFC;
+}

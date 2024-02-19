@@ -1,0 +1,145 @@
+@font-face {
+  font-family: 'icomoon';
+  src: url('icomoon.eot?be14c3');
+  src: url('icomoon.eot?be14c3#iefix') format('embedded-opentype'),
+       url('icomoon.ttf?be14c3') format('truetype'),
+       url('icomoon.woff?be14c3') format('woff'),
+       url('icomoon.svg?be14c3#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  
+  /* Enable Ligatures ================ */
+  letter-spacing: 0;
+  -webkit-font-feature-settings: "liga";
+  -moz-font-feature-settings: "liga=1";
+  -moz-font-feature-settings: "liga";
+  -ms-font-feature-settings: "liga" 1;
+  font-feature-settings: "liga";
+  -webkit-font-variant-ligatures: discretionary-ligatures;
+  font-variant-ligatures: discretionary-ligatures;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-Contact:before {
+  content: "\e900";
+}
+.icon-Contact_Location:before {
+  content: "\e901";
+}
+.icon-Contact_Mail:before {
+  content: "\e902";
+}
+.icon-Contact_Meet:before {
+  content: "\e903";
+}
+.icon-Contact_Submited:before {
+  content: "\e904";
+}
+.icon-Footer_ArrowTop:before {
+  content: "\e905";
+}
+.icon-Logo:before {
+  content: "\e906";
+}
+.icon-Moon:before {
+  content: "\e907";
+}
+.icon-Projects:before {
+  content: "\e908";
+}
+.icon-Projects_CosiImmo:before {
+  content: "\e909";
+}
+.icon-Projects_Epicerise:before {
+  content: "\e90a";
+}
+.icon-Projects_Novus:before {
+  content: "\e90b";
+}
+.icon-Projects_SpaceTrip:before {
+  content: "\e90c";
+}
+.icon-Services:before {
+  content: "\e90d";
+}
+.icon-Services_Creativity:before {
+  content: "\e90e";
+}
+.icon-Services_Design:before {
+  content: "\e90f";
+}
+.icon-Services_Dev:before {
+  content: "\e910";
+}
+.icon-Services_Illustration:before {
+  content: "\e911";
+}
+.icon-Skills:before {
+  content: "\e912";
+}
+.icon-Skills_Figma:before {
+  content: "\e913";
+}
+.icon-Skills_Github:before {
+  content: "\e914";
+}
+.icon-Skills_Illustrator:before {
+  content: "\e915";
+}
+.icon-Skills_JavaScript:before {
+  content: "\e916";
+}
+.icon-Skills_Photoshop:before {
+  content: "\e917";
+}
+.icon-Skills_PHP:before {
+  content: "\e918";
+}
+.icon-Skills_React:before {
+  content: "\e919";
+}
+.icon-Skills_Sketchup:before {
+  content: "\e91a";
+}
+.icon-Skills_SQL:before {
+  content: "\e91b";
+}
+.icon-Skills_Symfony:before {
+  content: "\e91c";
+}
+.icon-Skills_Tailwind:before {
+  content: "\e91d";
+}
+.icon-Skills_TypeScript:before {
+  content: "\e91e";
+}
+.icon-Skills_Vue:before {
+  content: "\e91f";
+}
+.icon-Skills_Wordpress:before {
+  content: "\e920";
+}
+.icon-Social_Instagram:before {
+  content: "\e921";
+}
+.icon-Social_Linkedin:before {
+  content: "\e922";
+}
+.icon-Sun:before {
+  content: "\e923";
+}

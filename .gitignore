@@ -1,0 +1,12 @@
+# Ignorer les fichiers log
+*.log
+
+# Ignorer les fichiers temporaires
+*.tmp
+
+# Ignorer le dossier "GIT-API"
+/GIT-API
+
+# Ignorer les fichiers de configuration spécifiques à un éditeur
+.vscode/
+.idea/

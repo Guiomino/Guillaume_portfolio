@@ -1,0 +1,13 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: "Rubik", "Helvetica", sans-serif;
+    color: #eee;
+    background: radial-gradient(#323D3E, #181818);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
