@@ -1,16 +1,20 @@
 .mainSection {
-    width: 500px;
-    margin: 200px 10% 0;
+    width: 1000px;
+    margin: 150px auto 0;
+    padding: 20px;
+}
+
+.mainContainer {
+    width: 600px;
     display: flex;
     flex-direction: column;
-    align-items: right;
-    justify-content: center;
-    text-align: right;
     gap: 20px;
+    padding: 20px;
 }
 
 .mainTitle,
 .mainSubtitle {
+    text-align: right;
     font-weight: 800;
     text-transform: uppercase;
 }
@@ -28,7 +32,10 @@
     -webkit-text-fill-color: transparent;
 }
 
+
 .mainTeaser {
+    width: 100%;
+    text-align: left;
     text-transform: uppercase;
     font-size: 30px;
     color: #22EFFC;
@@ -37,22 +44,54 @@
 
 }
 
+@media screen and (max-width: 800px) {
+    .mainContainer {
+        width: 280px;
+    }
+    
+    .mainTitle {
+        font-size: 34px;
+        text-align: left;
+    }
+    .mainSubtitle {
+        font-size: 28px;
+        text-align: left;
+    }
+    .mainTeaser {
+        font-size: 25px;
+    }
+}
+
+
+@media screen and (max-width: 500px) {
+    .mainContainer {
+        width: 280px;
+    }
+    
+    .mainTitle {
+        font-size: 24px;
+    }
+    .mainSubtitle {
+        font-size: 18px;
+    }
+    .mainTeaser {
+        font-size: 15px;
+    }
+}
 
 
 
 .socialIcons {
     display: flex;
-    justify-content: right;
+    justify-content: center;
     gap: 20px;
 }
 
 .icon {
-    /* width: 40px;
-    height: 40px; */
-    font-size: 40px;
+    width: 24px;
+    height: 24px;
     border: 1px solid #22EFFC;
     border-radius: 4px;
     padding: 10px;
     background-size: cover;
-    color: #22EFFC;
 }

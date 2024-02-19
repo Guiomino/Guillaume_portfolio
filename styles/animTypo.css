@@ -1,11 +1,11 @@
 .animation-container {
     position: absolute;
-    top: 25vh;
+    top: 15vh;
     left: 50%;
     transform: translateX(-0%);
     width: 500px;
     height: 500px;
-    z-index: 1;
+    z-index: -1;
 }
 
 .animation-container::before {

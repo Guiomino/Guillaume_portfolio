@@ -2,7 +2,7 @@ function getSkills(skills) {
   const skillsSection = document.querySelector(".skillsSection");
 
   // TITLE
-  const getIconSkills = `https://raw.githubusercontent.com/GuillaumeSimplon/repository_files_for_API_portfolio/master/icons/Skills.svg`;
+  const getIconSkills = `icons/Skills.svg`;
   const skillsTitle = document.createElement("div");
   skillsTitle.className = "title";
   const skillsTitleContent = `
@@ -22,30 +22,33 @@ function getSkills(skills) {
 
   skillsSection.appendChild(teaser);
 
-  // SKILLS LIST
+
+  // SKILLS LIST  
   skills[1].skillTable.forEach((skill) => {
     const cardSkills = document.createElement("div");
     cardSkills.className = "cardSkills";
     cardSkills.innerHTML = `<h3>${skill.title}</h3>`;
-  
+
     const toolsSkills = document.createElement("ul");
     skill.tools.forEach((tool) => {
       const listItem = document.createElement("li");
-  
-      const iconElement = document.createElement("i");
-      iconElement.className = tool.fontClass;
+
+      const iconElement = document.createElement("img");
+      iconElement.src = `./icons/${tool.icon}`;
+      iconElement.className = "iconSkills";
       listItem.appendChild(iconElement);
-  
-      const toolName = document.createElement("span");
+
+      const toolName = document.createElement("p");
       toolName.textContent = tool.name;
       listItem.appendChild(toolName);
-  
+
       toolsSkills.appendChild(listItem);
     });
-  
+
     skillsSection.appendChild(cardSkills);
     cardSkills.appendChild(toolsSkills);
   });
 }
 
 export { getSkills };
+

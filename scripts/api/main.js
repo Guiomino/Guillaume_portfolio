@@ -2,8 +2,10 @@ function getMain(main) {
   const mainSection = document.querySelector(".mainSection");
 
   // MAIN CONTENT
+  const mainContainer = document.createElement("div");
   if (main && main.length > 0) {
     main.forEach((item) => {
+      mainContainer.className = "mainContainer";
       const title = document.createElement("h1");
       title.className = "mainTitle";
       title.textContent = item.title;
@@ -16,14 +18,13 @@ function getMain(main) {
       teaser.className = "mainTeaser";
       teaser.textContent = item.teaser;
 
-      mainSection.appendChild(title);
-      mainSection.appendChild(subtitle);
-      mainSection.appendChild(teaser);
+      mainContainer.appendChild(title);
+      mainContainer.appendChild(subtitle);
+      mainContainer.appendChild(teaser);
     });
 
     // SOCIAL
-    const baseUrlIcons =
-      "https://raw.githubusercontent.com/GuillaumeSimplon/repository_files_for_API_portfolio/master/icons/";
+    const baseUrlIcons = "icons/";
 
     const iconNames = [
       "Social_Linkedin.svg",
@@ -36,11 +37,11 @@ function getMain(main) {
       "https://www.linkedin.com/in/guillaume-estrade/",
       "https://www.instagram.com/guiomino/",
       "https://github.com/GuillaumeSimplon",
-      "https://www.guiomino.com/"
+      "https://www.guiomino.com/",
     ];
 
     const social = document.createElement("div");
-    social.className = "socialIcons"
+    social.className = "socialIcons";
 
     iconNames.forEach((name, index) => {
       const link = document.createElement("a");
@@ -54,7 +55,21 @@ function getMain(main) {
       link.appendChild(icon);
       social.appendChild(link);
     });
-    mainSection.appendChild(social);
+    mainContainer.appendChild(social);
+
+    const mainButtons = [
+      { img: "./icons/Projects.svg", text: "Projects", href: "#projects" },
+      { img: "./icons/Contact.svg", text: "Contact", href: "#contact" },
+    ];
+
+    mainButtons.forEach((buttonContent) => {
+      const button = document.createElement("a");
+      button.innerHTML = `<img src="${buttonContent.img}"><p>${buttonContent.text}</p></a>`;
+      button.href = buttonContent.href;
+      mainContainer.appendChild(button);
+    });
+
+    mainSection.appendChild(mainContainer);
   }
 }
 
