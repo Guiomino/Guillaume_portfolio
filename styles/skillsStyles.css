@@ -1,15 +1,20 @@
+.skillsSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
 .title {
     margin: 100px auto 0;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    gap: 20px;
     color: #fff;
     text-shadow: 0px 0px 8px #22EFFC;
 }
 
 .cardSkills {
-    margin: 50px auto 0;
+    margin: 10px auto 0;
     width: 800px;
     display: flex;
     flex-direction: column;
@@ -23,7 +28,7 @@
 
 .cardSkills ul {
     display: flex;
-    gap: 50px;
+    justify-content: space-around;
 }
 
 .cardSkills li {

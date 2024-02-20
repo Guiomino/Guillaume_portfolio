@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="/fonts/style.css">
 
     <link rel="stylesheet" href="/styles/basicStyles.css">
+    <link rel="stylesheet" href="/styles/nav.css">
     <link rel="stylesheet" href="/styles/mainStyles.css">
     <link rel="stylesheet" href="/styles/skillsStyles.css">
     <link rel="stylesheet" href="/styles/animTypo.css">
@@ -23,18 +24,32 @@
 
 <body>
 
-    <nav></nav>
-    <section class="mainSection">
+    <header>
+        <button aria-label="toggle curtain navigation" class="nav_toggle">
+            <span class="line L1"></span>
+            <span class="line L2"></span>
+            <span class="line L3"></span>
+        </button>
 
-        <!-- <a href="#projets"><img src="./icons/Projects.svg" alt=""> Projects</a>
-        <a href="#contact"><img src="./icons/Contact.svg" alt=""> Contact</a> -->
-    </section>
-    <section class="skillsSection"></section>
-    <section class="servicesSection"></section>
-    <section class="projectsSection"></section>
-    <section class="contactSection"></section>
+        <aside>
+            <nav>
+                <a href="/#skillsSectionId">Skills</a>
+                <a href="/#servicesSectionId">Services</a>
+                <a href="/#projectsSectionId">Projects</a>
+                <a href="/#contactSectionId">Contact</a>
+            </nav>
+        </aside>
+    </header>
+
+
+    <section class="mainSection" id="mainSectionId"></section>
+    <section class="skillsSection" id="skillsSectionId"></section>
+    <section class="servicesSection" id="servicesSectionId"></section>
+    <section class="projectsSection" id="projectsSectionId"></section>
+    <section class="contactSection" id="contactSectionId"></section>
     <footer></footer>
 
+    <script type="module" src="/scripts/nav.js"></script>
     <script type="module" src="/scripts/api/fetch.js"></script>
     <script type="module" src="/scripts/animTypo.js"></script>
 
