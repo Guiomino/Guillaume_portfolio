@@ -2,7 +2,7 @@ function getServices(services) {
   const servicesSection = document.querySelector(".servicesSection");
 
   // TITLE
-  const getIconServices = `https://raw.githubusercontent.com/GuillaumeSimplon/repository_files_for_API_portfolio/master/icons/Services.svg`;
+  const getIconServices = `/icons/Services.svg`;
   const skillsTitle = document.createElement("div");
   skillsTitle.className = "title";
   const skillsTitleContent = `

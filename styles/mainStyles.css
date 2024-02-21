@@ -87,11 +87,10 @@
     gap: 20px;
 }
 
-.icon {
+.socialIcons img  {
     width: 24px;
     height: 24px;
     border: 1px solid #22EFFC;
     border-radius: 4px;
-    padding: 10px;
     background-size: cover;
 }

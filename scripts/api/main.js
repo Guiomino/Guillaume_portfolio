@@ -48,8 +48,7 @@ function getMain(main) {
       link.href = links[index];
       link.target = "_blank";
 
-      const icon = document.createElement("div");
-      icon.className = "icon";
+      const icon = document.createElement("img");
       icon.style.backgroundImage = `url('${baseUrlIcons + name}')`;
 
       link.appendChild(icon);
