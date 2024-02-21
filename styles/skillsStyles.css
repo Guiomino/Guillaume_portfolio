@@ -18,6 +18,7 @@
 }
 
 .title img {
+    width: 40px;
     border: 1px solid #22EFFC;
     border-radius: 3px;
     padding: 10px;

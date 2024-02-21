@@ -48,15 +48,17 @@
     .mainContainer {
         width: 280px;
     }
-    
+
     .mainTitle {
         font-size: 34px;
         text-align: left;
     }
+
     .mainSubtitle {
         font-size: 28px;
         text-align: left;
     }
+
     .mainTeaser {
         font-size: 25px;
     }
@@ -67,13 +69,15 @@
     .mainContainer {
         width: 280px;
     }
-    
+
     .mainTitle {
         font-size: 24px;
     }
+
     .mainSubtitle {
         font-size: 18px;
     }
+
     .mainTeaser {
         font-size: 15px;
     }
@@ -87,10 +91,50 @@
     gap: 20px;
 }
 
-.socialIcons img  {
-    width: 24px;
-    height: 24px;
+.socialIcons img {
+    width: 30px;
     border: 1px solid #22EFFC;
-    border-radius: 4px;
-    background-size: cover;
+    border-radius: 5px;
+    padding: 5px;
+    transition: 0.3s;
+}
+
+.socialIcons img:hover {
+    opacity: 0.6;
+}
+
+
+
+
+.mainButtons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.mainButtons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: #00000055;
+    width: 100px;
+    padding: 6px 60px;
+    border: 1px solid #22EFFC;
+    border-radius: 3px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.mainButtons a p {
+    color: #22EFFC;
+}
+
+.mainButtons a img {
+    width: 15px;
+}
+
+.mainButtons a:hover {
+box-shadow: 0px 0px 12px #22EFFC;
 }

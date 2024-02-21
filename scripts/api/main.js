@@ -49,23 +49,30 @@ function getMain(main) {
       link.target = "_blank";
 
       const icon = document.createElement("img");
-      icon.style.backgroundImage = `url('${baseUrlIcons + name}')`;
+      icon.src = baseUrlIcons + name;
 
       link.appendChild(icon);
       social.appendChild(link);
     });
     mainContainer.appendChild(social);
 
+    // CTA
     const mainButtons = [
-      { img: "./icons/Projects.svg", text: "Projects", href: "#projects" },
-      { img: "./icons/Contact.svg", text: "Contact", href: "#contact" },
+      { img: "./icons/Projects.svg", text: "Projects", href: "/#projectsSectionId" },
+      { img: "./icons/Contact.svg", text: "Contact", href: "/#contactSectionId" },
     ];
-
+    const mainButtonsContainer = document.createElement("div");
+    mainButtonsContainer.className = "mainButtons";
     mainButtons.forEach((buttonContent) => {
       const button = document.createElement("a");
       button.innerHTML = `<img src="${buttonContent.img}"><p>${buttonContent.text}</p></a>`;
       button.href = buttonContent.href;
-      mainContainer.appendChild(button);
+      button.addEventListener("click", (event) => {
+        event.preventDefault();
+        window.location.href = buttonContent.href;
+      });
+      mainButtonsContainer.appendChild(button);
+      mainContainer.appendChild(mainButtonsContainer);
     });
 
     mainSection.appendChild(mainContainer);
