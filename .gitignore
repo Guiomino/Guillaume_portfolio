@@ -6,6 +6,7 @@
 
 # Ignorer le dossier "GIT-API"
 /GIT-API
+/fonts
 
 # Ignorer les fichiers de configuration spécifiques à un éditeur
 .vscode/

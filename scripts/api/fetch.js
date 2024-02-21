@@ -1,6 +1,9 @@
-import { getMain } from "./main.js";
-import { getSkills } from "./skills.js";
-import { getServices } from "./services.js";
+// @ts-check
+
+
+import { getMain } from "../api/main.js";
+import { getSkills } from "../api/skills.js";
+import { getServices } from "../api/services.js";
 
 function getData(url) {
   fetch(url)
