@@ -1,20 +1,28 @@
 .servicesSection {
+    width: 100%;
+    max-width: 1300px;
+    margin: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
 
 
-
-
-
 /* SERVICES LIST */
+.cardServicesContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
 .cardServices {
     position: relative;
     background: linear-gradient(to top right, #22EFFC22, #22EFFC00 75%);
     width: 90%;
-    max-width: 555px;
+    max-width: 500px;
     padding: 30px;
     display: flex;
     flex-direction: column;
@@ -61,7 +69,7 @@
 .serviceTitle {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
     margin-bottom: 20px;
 }
 

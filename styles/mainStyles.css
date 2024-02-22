@@ -1,5 +1,6 @@
 .mainSection {
-    width: 1000px;
+    width: 100%;
+    max-width: 1300px;
     margin: 150px auto 0;
     padding: 20px;
 }

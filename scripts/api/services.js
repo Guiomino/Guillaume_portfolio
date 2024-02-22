@@ -2,7 +2,7 @@ function getServices(services) {
   const servicesSection = document.querySelector(".servicesSection");
 
   // TITLE
-  const getIconServices = `/icons/Services.svg`;
+  const getIconServices = `icons/Services.svg`;
   const skillsTitle = document.createElement("div");
   skillsTitle.className = "title";
   const skillsTitleContent = `
@@ -22,6 +22,8 @@ function getServices(services) {
   servicesSection.appendChild(teaser);
 
   // SERVICES LIST
+  const cardServicesContainer = document.createElement("div")
+  cardServicesContainer.className = "cardServicesContainer"
   services[1].servicesTable.forEach((service) => {
     const cardServices = document.createElement("div");
     cardServices.className = "cardServices";
@@ -58,9 +60,10 @@ function getServices(services) {
       descriptionServices.appendChild(listItem);
     });
 
-    servicesSection.appendChild(cardServices);
     cardServices.appendChild(descriptionServices);
+    cardServicesContainer.appendChild(cardServices)
   });
+  servicesSection.appendChild(cardServicesContainer);
 }
 
 export { getServices };

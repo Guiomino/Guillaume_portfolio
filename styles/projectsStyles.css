@@ -1,0 +1,130 @@
+.projectsSection {
+    width: 100%;
+    max-width: 1300px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+.cardProjects {
+    background-color: #ffffff11;
+    width: 100%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+    border: 1px solid #22EFFC33;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.cardProjects:hover {
+    border: 1px solid #22EFFC;
+}
+
+
+/* TITRE DES PROJETS */
+.projectTitleContainer {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.projectTitleContainer img {
+    width: 35px;
+    height: 35px;
+    padding: 5px;
+    border: 1px solid #22EFFC;
+    border-radius: 3px;
+}
+
+.projectTitleContainer h3 {
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #22EFFC;
+}
+
+
+/* DETAILS DES PROJETS */
+.projectDetailsContainer {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+}
+
+.tools,
+.description,
+.challenges {
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (max-width: 800px) {
+
+    .projectDetailsContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tools,
+    .description,
+    .challenges {
+        width: 100%;
+    }
+
+}
+
+.tools div,
+.description div,
+.challenges div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.tools div span,
+.description div span,
+.challenges div span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #22EFFC;
+    font-size: 16px;
+    font-weight: 700;
+    border: 1px solid #22EFFC;
+    border-radius: 3px;
+    width: 30px;
+    height: 30px;
+    padding: 10px;
+}
+
+.tools div h4,
+.description div h4,
+.challenges div h4 {
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.projectDetailsContainer p {
+    font-size: 14px;
+    text-align: justify;
+}
+
+.projectDetailsContainer img {
+    width: 100%;
+    margin-bottom: 2px;
+    border: 1px solid black;
+}

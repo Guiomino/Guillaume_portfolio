@@ -1,9 +1,9 @@
 // @ts-check
 
-
 import { getMain } from "../api/main.js";
 import { getSkills } from "../api/skills.js";
 import { getServices } from "../api/services.js";
+import { getProjects } from "../api/projects.js";
 
 function getData(url) {
   fetch(url)
@@ -18,6 +18,7 @@ function getData(url) {
       getMain(data.main);
       getSkills(data.skills);
       getServices(data.services);
+      getProjects(data.projects);
     })
     .catch((error) => {
       console.error("Error fetching service :", error);
