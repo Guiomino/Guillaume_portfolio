@@ -136,5 +136,6 @@
 }
 
 .mainButtons a:hover {
-box-shadow: 0px 0px 12px #22EFFC;
+    filter: hue-rotate(90deg);
+    box-shadow: 4px 8px 12px #22EFFC;
 }

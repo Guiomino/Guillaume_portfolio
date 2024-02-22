@@ -15,22 +15,46 @@ function getServices(services) {
 
   servicesSection.appendChild(skillsTitle);
 
-  // SERVICES LIST
   const teaser = document.createElement("h3");
   teaser.className = "teaser";
   teaser.textContent = services[0].teaser;
 
   servicesSection.appendChild(teaser);
 
+  // SERVICES LIST
   services[1].servicesTable.forEach((service) => {
     const cardServices = document.createElement("div");
     cardServices.className = "cardServices";
-    cardServices.innerHTML = `<h3>${service.title}</h3>`;
+
+    const serviceTitle = document.createElement("div");
+    serviceTitle.className = "serviceTitle";
+
+    const iconService = document.createElement("img");
+    iconService.src = `./icons/${service.icon}`;
+
+    const titleService = document.createElement("h3");
+    titleService.textContent = service.title;
+
+    serviceTitle.appendChild(iconService);
+    serviceTitle.appendChild(titleService);
+
+    cardServices.appendChild(serviceTitle);
 
     const descriptionServices = document.createElement("ul");
-    service.description.forEach((description) => {
+    service.description.forEach((description, index) => {
       const listItem = document.createElement("li");
-      listItem.textContent = description;
+
+      const numbering = document.createElement("span");
+      // numbering.className = "numbering";
+      numbering.textContent = index + 1;
+
+      const descriptionText = document.createElement("p");
+      // descriptionText.className = "descriptionText";
+      descriptionText.textContent = description;
+
+      listItem.appendChild(numbering);
+      listItem.appendChild(descriptionText);
+
       descriptionServices.appendChild(listItem);
     });
 

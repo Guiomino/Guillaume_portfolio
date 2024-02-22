@@ -2,51 +2,57 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
 }
 
 
 
-.title {
-    margin: 100px auto 0;
-    display: flex;
-    gap: 20px;
-    color: #fff;
-    text-shadow: 0px 0px 8px #22EFFC;
-    display: flex;
-    align-items: center;
-}
-
-.title img {
-    width: 40px;
-    border: 1px solid #22EFFC;
-    border-radius: 3px;
-    padding: 10px;
-}
-
-.teaser {
-    text-align: center;
-    font-size: 16px;
-    font-weight: 500;
-    margin: 0 20px;
-}
 
 
 /* CARDS */
 .cardSkills {
     position: relative;
-    margin: 10px auto 0;
     width: 100%;
     max-width: 1000px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
-    background: radial-gradient(ellipse at top, #22EFFC11, transparent),
-        radial-gradient(ellipse at bottom, #ffffff11, transparent);
     padding: 30px;
     border-radius: 3px;
+    overflow: hidden;
+
+    border-width: 1px;
+    border-style: solid;
+    border-top: #22EFFC55;
+    border-image:
+        linear-gradient(to right,
+            transparent,
+            #22EFFC55,
+            transparent) 1 0%;
 }
+
+.cardSkills:last-child {
+    border-bottom: none;
+}
+
+.cardSkills::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at top, #22EFFC15, transparent 66%),
+        radial-gradient(ellipse at bottom, #ffffff15, transparent 66%);
+    transition: opacity 0.3s ease;
+    z-index: -1;
+    opacity: 0.3;
+}
+
+.cardSkills:hover::before {
+    opacity: 1;
+}
+
+
 
 .cardSkills h3 {
     position: absolute;

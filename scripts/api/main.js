@@ -58,8 +58,8 @@ function getMain(main) {
 
     // CTA
     const mainButtons = [
-      { img: "./icons/Projects.svg", text: "Projects", href: "/#projectsSectionId" },
-      { img: "./icons/Contact.svg", text: "Contact", href: "/#contactSectionId" },
+      { img: "./icons/Projects.svg", text: "Projects", href: "#projectsSectionId" },
+      { img: "./icons/Contact.svg", text: "Contact", href: "#contactSectionId" },
     ];
     const mainButtonsContainer = document.createElement("div");
     mainButtonsContainer.className = "mainButtons";
