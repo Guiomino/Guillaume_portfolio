@@ -51,4 +51,3 @@ function getSkills(skills) {
 }
 
 export { getSkills };
-
