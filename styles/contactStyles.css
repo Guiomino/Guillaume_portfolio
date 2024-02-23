@@ -1,0 +1,45 @@
+.contactSection {
+    width: 100%;
+    max-width: 1300px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contactSection span {
+    color: #22EFFC;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+
+
+/* SECTION PERSONAL INFORMATION */
+.personalInfoDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.personalInfoDiv .labelDisplay {
+    position: absolute;
+    pointer-events: none;
+    transition: transform 0.3s ease-out, 0.3s ease-out;
+    transform-origin: 0 0;
+    color: #888;
+}
+
+.labelDisplay.filledInput {
+    transform: translate(5px, -20px) scale(0.8);
+    color: skyblue;
+}
+
+
+
+input {
+    padding: 10px 50px;
+}

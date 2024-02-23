@@ -49,6 +49,8 @@ body {
 }
 
 .teaser {
+  width: 100%;
+  max-width: 800px;
   margin: 0px auto 50px;
   text-align: center;
   font-size: 16px;
