@@ -138,28 +138,47 @@ contactSection.appendChild(teaser);
     submitContainer.appendChild(submitButton);
     form.appendChild(submitContainer);
 
-    // SOCIAL NETWORK
-    const socialMediaDiv = document.createElement('div');
-    socialMediaDiv.innerHTML = 'You can also find me on social networks.<br>' +
-                               'Let\'s discuss your projects, ideas, and desires.<br>' +
-                               '<a href="https://www.linkedin.com/in/guillaume-estrade/" target="_blank">' +
-                               '<img src="link_to_linkedin_icon" alt="LinkedIn"></a>' +
-                               '<a href="https://github.com/GuillaumeSimplon" target="_blank">' +
-                               '<img src="link_to_github_icon" alt="GitHub"></a>' +
-                               '<br><br><div id="linkedinQRCode"></div>' +
-                               '<div id="githubQRCode"></div>';
-
     // ADD FORM
     document.getElementById('contactSectionId').appendChild(form);
-    document.getElementById('contactSectionId').appendChild(socialMediaDiv);
     handleLabelDisplay('name', 'nameLabel');
     handleLabelDisplay('email', 'emailLabel');
     handleLabelDisplay('phone', 'phoneLabel');
     handleLabelDisplay('message', 'messageLabel');
 
+
+
+    // SOCIAL NETWORK
+    const socialMediaDiv = document.createElement('div');
+    socialMediaDiv.className = "socialMediaDiv"
+
+    const socialMediaTitle = document.createElement("h3")
+    socialMediaTitle.textContent = "You can also find me on social networks"
+
+    const socialMediaSubtitle = document.createElement("h4")
+    socialMediaSubtitle.textContent = "Let's discuss your projects, ideas, and desires"
+
+    socialMediaDiv.innerHTML = '<a href="https://www.linkedin.com/in/guillaume-estrade/" target="_blank">' +
+                               '<img src="link_to_linkedin_icon" alt="LinkedIn"></a>' +
+                               '<a href="https://github.com/GuillaumeSimplon" target="_blank">' +
+                               '<img src="link_to_github_icon" alt="GitHub"></a>' +
+                               '<a href="https://www.instagram.com/guiomino/" target="_blank">' +
+                               '<img src="link_to_instagram_icon" alt="Instagram"></a>' +
+                               '<a href="https://www.guiomino.com/" target="_blank">' +
+                               '<img src="link_to_github_icon" alt="Novus"></a>' +
+                               '<br><br><div id="linkedinQRCode"></div>' +
+                               '<div id="githubQRCode"></div>' +
+                               '<div id="instagramQRCode"></div>' +
+                               '<div id="novusQRCode"></div>';
+    
+    socialMediaDiv.appendChild(socialMediaTitle)
+    socialMediaDiv.appendChild(socialMediaSubtitle)
+    document.getElementById('contactSectionId').appendChild(socialMediaDiv);
+
     // QR CODES
     new QRCode(document.getElementById("linkedinQRCode"), "https://www.linkedin.com/in/guillaume-estrade/");
     new QRCode(document.getElementById("githubQRCode"), "https://github.com/GuillaumeSimplon");
+    new QRCode(document.getElementById("instagramQRCode"), "https://www.instagram.com/guiomino/");
+    new QRCode(document.getElementById("novusQRCode"), "https://www.guiomino.com/");
 
     form.appendChild(socialMediaDiv);
 
@@ -202,31 +221,31 @@ contactSection.appendChild(teaser);
 
       
       // FIELD VALIDATION
-        if (name.trim() === '' || !/^[a-zA-Z\s'-]+$/.test(name)) {
-          showModal('Invalid Name', 'Please enter a valid name');
-          return;
+        if (name.trim() === '' || !/^[a-zA-Z\s'-]{1,45}$/.test(name)) {
+        showModal('Invalid Name', 'Please enter a valid name (up to 45 characters, only letters, spaces, apostrophes, and hyphens are allowed)');
+        return;
         }
-      
+
         if (email.trim() === '' || !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(?:\.[a-zA-Z]{2,})?$/.test(email)) {
-          showModal('Invalid Email', 'Please enter a valid email address');
+          showModal('Invalid Email', 'Please enter a valid email address. The email should follow the format example@example.com');
           return;
         }
-      
+
         if (phone !== '' && !/^[0-9]{10}$|^[0-9]{3}[-.][0-9]{3}[-.][0-9]{4}$/.test(phone)) {
-          showModal('Invalid Phone', 'Please enter a valid phone number like 0123456789 with numbers, or leave the field empty');
+          showModal('Invalid Phone', 'Please enter a valid phone number with 10 digits (e.g., 0123456789) or in the format xx-xx-xx-xx-xx.');
           return;
         }
-      
+
         if (contactReasons.length === 0) {
           showModal('Choose a Reason', 'Please select at least one reason for contact');
           return;
         }
-      
+
         if (message.trim() === '' || !/^[a-zA-Z0-9.,;:!? ]+$/.test(message) || message.length > 500) {
-          showModal('Invalid Message', 'Please enter a message without special characters and with a maximum of 500 characters');
+          showModal('Invalid Input', 'Please provide a message containing only letters, numbers, and basic punctuation, with a maximum length of 500 characters.');
           return;
         }
-      
+
         if (!recaptchaChecked) {
           showModal('Submission Error', 'Please complete the reCAPTCHA ✔️ verification to proceed.');
           return;
