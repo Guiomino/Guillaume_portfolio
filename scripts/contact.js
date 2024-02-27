@@ -52,27 +52,46 @@ contactSection.appendChild(teaser);
     
   
     // PERSONAL INFORMATIONS
+    const personalInfoContainer = document.createElement('div');
+    personalInfoContainer.className = "personalInfoContainer";
+    
+    const personalInfoTitle = document.createElement('h3');
+    personalInfoTitle.textContent = "Your informations";
+    personalInfoContainer.appendChild(personalInfoTitle);
+    
     const personalInfoDiv = document.createElement('div');
-    personalInfoDiv.className= "personalInfoDiv"
+    personalInfoDiv.className = "personalInfoDiv";
     personalInfoDiv.innerHTML =   '<label class="labelDisplay" for="name" id="nameLabel">Your name*</label>' +
                                   '<input type="text" id="name" name="name" autocomplete="name" required><br>' +
                                   '<label class="labelDisplay" for="email" id="emailLabel">Your email*</label>' +
                                   '<input type="email" id="email" name="email" autocomplete="email" required><br>' +
                                   '<label class="labelDisplay" for="phone" id="phoneLabel">Your phone number</label>' +
                                   '<input type="tel" id="phone" name="phone" autocomplete="tel"><br>';
-  form.appendChild(personalInfoDiv);
     
+    personalInfoContainer.appendChild(personalInfoDiv);
+    form.appendChild(personalInfoContainer);
+    
+
     // REASONS FOR CONTACT
+    const contactReasonsContainer = document.createElement('div');
+    contactReasonsContainer.className = "contactReasonsContainer";
+    
+    const contactReasonsTitle = document.createElement('h3');
+    contactReasonsTitle.textContent = "Why are you contacting me ?";
+    contactReasonsContainer.appendChild(contactReasonsTitle);
+
     const contactReasonsDiv = document.createElement('div');
-    contactReasonsDiv.innerHTML = '<label>Why are you contacting me?</label><br>' +
-                                  '<label><input type="checkbox" name="reason" value="Web Design">Web Design</label>' +
+    contactReasonsDiv.className = "contactReasonsDiv";
+    contactReasonsDiv.innerHTML = '<label><input type="checkbox" name="reason" value="Web Design">Web Design</label>' +
                                   '<label><input type="checkbox" name="reason" value="Graphic Design">Graphic Design</label>' +
-                                  '<label><input type="checkbox" name="reason" value="Creativity and consulting">Creativity and consulting</label>' +
                                   '<label><input type="checkbox" name="reason" value="Illustration">Illustration</label>' +
                                   '<label><input type="checkbox" name="reason" value="Collaboration">Collaboration</label>' +
+                                  '<label><input type="checkbox" name="reason" value="Creativity and consulting">Creativity and consulting</label>' +
                                   '<label><input type="checkbox" name="reason" value="Others">Others</label><br>';
-    form.appendChild(contactReasonsDiv);
-    
+    contactReasonsContainer.appendChild(contactReasonsDiv);
+    form.appendChild(contactReasonsContainer);
+
+
     // TEXT AREA MESSAGE
     const messageDiv = document.createElement('div');
     messageDiv.innerHTML = '<label id="messageLabel">Your message*</label><br>' +
@@ -128,36 +147,62 @@ contactSection.appendChild(teaser);
       const recaptchaChecked = document.querySelector('input[name="recaptcha"]').checked;
       const contactReasons = document.querySelectorAll('input[name="reason"]:checked');
 
+
+
+      // OPEN MODAL IF ERROR
+      function showModal(title, message) {
+        const modalContainer = document.querySelector('.modal_container');
+        const modal = document.querySelector('.modal');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalMessage = document.getElementById('modalMessage');
+      
+        modalTitle.textContent = title;
+        modalMessage.textContent = message;
+      
+        modalContainer.classList.add('active');
+      }
+
+      // CLOSE MODAL
+      function closeModal() {
+        const modalContainer = document.querySelector('.modal_container');
+        modalContainer.classList.remove('active');
+      }
+      const closeModalBtn = document.querySelector('.close_modal');
+      closeModalBtn.addEventListener('click', closeModal);
+      const overlay = document.querySelector('.overlay');
+      overlay.addEventListener('click', closeModal);
+
+      
       // FIELD VALIDATION
-      if (name.trim() === '' || !/^[a-zA-Z\s'-]+$/.test(name)) {
-        alert('Please enter a valid name');
-        return;
-      }
-
-      if (email.trim() === '' || !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(?:\.[a-zA-Z]{2,})?$/.test(email)) {
-        alert('Please enter a valid email address');
-        return;
-      }
-
-      if (phone !== '' && !/^[0-9]{10}$|^[0-9]{3}[-.][0-9]{3}[-.][0-9]{4}$/.test(phone)) {
-        alert('Please enter a valid phone number or leave the field empty');
-        return;
-      }
-
-      if (contactReasons.length === 0) {
-        alert('Please select at least one reason for contact');
-        return;
-      }
-
-      if (message.trim() === '' || !/^[a-zA-Z0-9.,;:!? ]+$/.test(message) || message.length > 500) {
-        alert('Please enter a message without special characters and with a maximum of 500 characters');
-        return;
-      }
-
-      if (!recaptchaChecked) {
-        alert('Please tick the box to submit');
-        return;
-      }
+        if (name.trim() === '' || !/^[a-zA-Z\s'-]+$/.test(name)) {
+          showModal('Invalid Name', 'Please enter a valid name');
+          return;
+        }
+      
+        if (email.trim() === '' || !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(?:\.[a-zA-Z]{2,})?$/.test(email)) {
+          showModal('Invalid Email', 'Please enter a valid email address');
+          return;
+        }
+      
+        if (phone !== '' && !/^[0-9]{10}$|^[0-9]{3}[-.][0-9]{3}[-.][0-9]{4}$/.test(phone)) {
+          showModal('Invalid Phone', 'Please enter a valid phone number like 01 23 45 56 78 with numbers, or leave the field empty');
+          return;
+        }
+      
+        if (contactReasons.length === 0) {
+          showModal('Invalid Input', 'Please select at least one reason for contact');
+          return;
+        }
+      
+        if (message.trim() === '' || !/^[a-zA-Z0-9.,;:!? ]+$/.test(message) || message.length > 500) {
+          showModal('Invalid Input', 'Please enter a message without special characters and with a maximum of 500 characters');
+          return;
+        }
+      
+        if (!recaptchaChecked) {
+          showModal('Invalid Input', 'Please tick the box to submit');
+          return;
+        }
 
       submissionAttempts++;
       if (submissionAttempts > maxSubmissionAttempts) {
@@ -170,10 +215,9 @@ contactSection.appendChild(teaser);
               submitButton.disabled = false;
             }, 5000);
 
-      alert('Form submitted successfully!\n\nName: ' + name + '\nEmail: ' + email +
-            '\nPhone: ' + phone + '\nMessage: ' + message +
-            '\nContact Reasons: ' + Array.from(contactReasons).map(reason => reason.value).join(', '));
+            showModal("✅"+' Form submitted successfully !', 'Thanks ' + name);
 
             submissionAttempts = 0;
     }
+  
     
