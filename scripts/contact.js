@@ -92,24 +92,51 @@ contactSection.appendChild(teaser);
     form.appendChild(contactReasonsContainer);
 
 
+    // // TEXT + CAPTCHA + SUBMIT CONTAINER
+    const submitContainer = document.createElement("div")
+    submitContainer.className = "submitContainer"
+
     // TEXT AREA MESSAGE
+    const messageContainer = document.createElement('div');
+    messageContainer.className = "messageContainer";
+    
+    const messageTitle = document.createElement('h3');
+    messageTitle.textContent = "How can I help you?";
+    messageContainer.appendChild(messageTitle);
+
     const messageDiv = document.createElement('div');
-    messageDiv.innerHTML = '<label id="messageLabel">Your message*</label><br>' +
-                           '<textarea id="message" name="message" rows="4" class="labelDisplay" required></textarea><br>';
-    form.appendChild(messageDiv);
+    messageDiv.className = "messageDiv";
+    messageDiv.innerHTML = '<label class="labelDisplay" for="message" id="messageLabel">Your message*</label><br>' +
+                           '<textarea id="message" name="message" rows="4" required></textarea><br>';
+    messageContainer.appendChild(messageDiv);
+    submitContainer.appendChild(messageContainer);
 
     // reCAPTCHA
+    const recaptchaContainer = document.createElement('div');
+    recaptchaContainer.className = "recaptchaContainer";
+    
+    const recaptchaTitle = document.createElement('h3');
+    recaptchaTitle.textContent = "Please, tick the box to submit*";
+    recaptchaContainer.appendChild(recaptchaTitle);
+    
     const recaptchaDiv = document.createElement('div');
-    recaptchaDiv.innerHTML = '<label>Please, tick the box to submit*</label><br>' +
-                             '<label><input type="checkbox" name="recaptcha" required>I’m not a robot</label><br>';
-    form.appendChild(recaptchaDiv);
+    recaptchaDiv.className= "recaptchaDiv";
+    recaptchaDiv.innerHTML = '<label><input type="checkbox" name="recaptcha" required>I’m not a robot' +
+    '<img src="icons/reCAPTCHA-logo.png" alt="reCAPTCHA Logo" class="recaptchaLogo"></label><br>';
+    recaptchaContainer.appendChild(recaptchaDiv);
+    submitContainer.appendChild(recaptchaContainer);
 
     // SUBMIT
     const submitButton = document.createElement('button');
+    submitButton.className = "submitButton"
     submitButton.type = 'button';
-    submitButton.textContent = 'Submit';
+    const envelopeIcon = document.createElement("img")
+    envelopeIcon.src = "icons/Contact_Mail.svg"; envelopeIcon.alt = "mail icon"
+    submitButton.innerHTML = "Submit";
+    submitButton.insertBefore(envelopeIcon, submitButton.firstChild);
     submitButton.addEventListener('click', validateForm);
-    form.appendChild(submitButton);
+    submitContainer.appendChild(submitButton);
+    form.appendChild(submitContainer);
 
     // SOCIAL NETWORK
     const socialMediaDiv = document.createElement('div');
@@ -128,6 +155,7 @@ contactSection.appendChild(teaser);
     handleLabelDisplay('name', 'nameLabel');
     handleLabelDisplay('email', 'emailLabel');
     handleLabelDisplay('phone', 'phoneLabel');
+    handleLabelDisplay('message', 'messageLabel');
 
     // QR CODES
     new QRCode(document.getElementById("linkedinQRCode"), "https://www.linkedin.com/in/guillaume-estrade/");
@@ -185,22 +213,22 @@ contactSection.appendChild(teaser);
         }
       
         if (phone !== '' && !/^[0-9]{10}$|^[0-9]{3}[-.][0-9]{3}[-.][0-9]{4}$/.test(phone)) {
-          showModal('Invalid Phone', 'Please enter a valid phone number like 01 23 45 56 78 with numbers, or leave the field empty');
+          showModal('Invalid Phone', 'Please enter a valid phone number like 0123456789 with numbers, or leave the field empty');
           return;
         }
       
         if (contactReasons.length === 0) {
-          showModal('Invalid Input', 'Please select at least one reason for contact');
+          showModal('Choose a Reason', 'Please select at least one reason for contact');
           return;
         }
       
         if (message.trim() === '' || !/^[a-zA-Z0-9.,;:!? ]+$/.test(message) || message.length > 500) {
-          showModal('Invalid Input', 'Please enter a message without special characters and with a maximum of 500 characters');
+          showModal('Invalid Message', 'Please enter a message without special characters and with a maximum of 500 characters');
           return;
         }
       
         if (!recaptchaChecked) {
-          showModal('Invalid Input', 'Please tick the box to submit');
+          showModal('Submission Error', 'Please complete the reCAPTCHA ✔️ verification to proceed.');
           return;
         }
 

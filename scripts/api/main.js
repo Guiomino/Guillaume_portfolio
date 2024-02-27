@@ -65,7 +65,7 @@ function getMain(main) {
     mainButtonsContainer.className = "mainButtons";
     mainButtons.forEach((buttonContent) => {
       const button = document.createElement("a");
-      button.innerHTML = `<img src="${buttonContent.img}"><p>${buttonContent.text}</p></a>`;
+      button.innerHTML = `<img src="${buttonContent.img}"><p>${buttonContent.text}</p>`;
       button.href = buttonContent.href;
       button.addEventListener("click", (event) => {
         event.preventDefault();

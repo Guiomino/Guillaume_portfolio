@@ -21,15 +21,24 @@
     background: linear-gradient(to top right, #22EFFC22, #22EFFC00 75%);
 }
 
-.contactReasonsContainer {
+.contactReasonsContainer,
+.submitContainer {
     display: flex;
     flex-direction: column;
     gap: 20px;
+}
+
+.contactReasonsContainer {
     background: linear-gradient(to bottom left, #22EFFC22, #22EFFC00, #22EFFC22);
 }
 
+.submitContainer {
+    background: linear-gradient(to bottom right, #22EFFC22, #22EFFC00 40%);
+}
+
 .personalInfoContainer,
-.contactReasonsContainer {
+.contactReasonsContainer,
+.submitContainer {
     border: 1px solid #22EFFC33;
     border-radius: 5px;
     width: 100%;
@@ -40,7 +49,8 @@
 }
 
 .personalInfoContainer h3,
-.contactReasonsContainer h3 {
+.contactReasonsContainer h3,
+.submitContainer h3 {
     text-align: center;
     font-size: 16px;
     font-weight: 500;
@@ -52,25 +62,31 @@
 
 
 
-.personalInfoDiv input {
+
+
+.personalInfoDiv input,
+.messageDiv input {
     position: relative;
     width: 100%;
     margin: 20px auto;
-    padding: 10px 0;
-    background-color: #ffffff33;
+    padding: 10px;
+    background-color: #ffffff22;
     border: 1px solid #22EFFC33;
-    border-radius: 5px;
+    border-radius: 3px;
     box-shadow: 0px 3px 8px #00000033;
+    color: white;
 }
 
-.personalInfoDiv .labelDisplay {
+.personalInfoDiv .labelDisplay,
+.messageDiv .labelDisplay {
     position: absolute;
     pointer-events: none;
     transition: transform 0.3s ease-out, 0.3s ease-out;
     transform-origin: 0 0;
-    color: #888;
+    color: #aaa;
     padding-top: 29px;
     padding-left: 10px;
+    font-size: 15px;
 }
 
 .labelDisplay.filledInput {
@@ -85,7 +101,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    gap: 20px;
+    gap: 8px;
 }
 
 .contactReasonsDiv input[type="checkbox"] {
@@ -93,6 +109,7 @@
     width: 20px;
     height: 20px;
     accent-color: #22EFFC;
+    cursor: pointer;
 }
 
 .contactReasonsDiv label {
@@ -104,9 +121,85 @@
 
 
 
+.messageDiv textarea {
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    background-color: #ffffff22;
+    border: 1px solid #22EFFC33;
+    border-radius: 3px;
+    box-shadow: 0px 3px 8px #00000033;
+    padding: 10px;
+    color: white;
+}
+
+
+.recaptchaContainer {
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.recaptchaDiv input[type="checkbox"] {
+    margin: 10px;
+    width: 20px;
+    height: 20px;
+    accent-color: #22EFFC;
+}
+
+.recaptchaDiv label {
+    background-color: #ffffff22;
+    border: 1px solid #22EFFC33;
+    border-radius: 3px;
+    box-shadow: 0px 3px 8px #00000033;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.recaptchaDiv img {
+    width: 30px;
+    height: auto;
+    margin-right: 10px;
+}
 
 
 
+/* SUBMIT BUTTON */
+.submitButton {
+    font-family: "Allerta Stencil";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: #22EFFC;
+    text-transform: uppercase;
+    background-color: #00000055;
+    width: 100px;
+    padding: 6px 60px;
+    margin: 20px auto;
+    border: 1px solid #22EFFC;
+    border-radius: 3px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.submitButton:hover {
+    filter: hue-rotate(90deg);
+    box-shadow: 4px 8px 12px #22EFFC;
+}
+
+.submitButton img {
+    width: 20px;
+    height: 20px;
+}
 
 
 /* MODAL ERROR MESSAGE AND SUCCES SUBMIT */
