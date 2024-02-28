@@ -40,14 +40,14 @@
     background: linear-gradient(to bottom right, #22EFFC22, #22EFFC00 40%);
 }
 
-.socialMediaDiv {
+.socialContainer {
     background: linear-gradient(to top left, #22EFFC22, #22EFFC00 66%, #22EFFC22);
 }
 
 .personalInfoContainer,
 .contactReasonsContainer,
 .submitContainer,
-.socialMediaDiv {
+.socialContainer {
     border: 1px solid #22EFFC33;
     border-radius: 5px;
     width: 100%;
@@ -60,13 +60,19 @@
 .personalInfoContainer h3,
 .contactReasonsContainer h3,
 .submitContainer h3,
-.socialMediaDiv h3 {
+.socialContainer h3 {
     text-align: center;
     font-size: 16px;
     font-weight: 500;
 }
 
-
+.socialContainer h4 {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 400;
+    color: #22EFFC;
+    margin: 10px auto 50px;
+}
 
 
 
@@ -217,16 +223,48 @@
 
 
 
+
+
+
 .socialMediaDiv {
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 80px;
 }
 
+.socialMediaDiv div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    gap: 30px;
+}
 
+.socialMediaDiv a .socialIcon {
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    border: 1px solid #22EFFC;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.socialMediaDiv a .socialIcon:hover {
+    filter: hue-rotate(90deg);
+    box-shadow: 4px 8px 12px #22EFFC;
+}
 
+.socialMediaDiv .QRCode img {
+    width: 90px;
+    height: 90px;
+    margin-left: 20px;
+    background-color: white;
+    padding: 5px;
+    margin: 5px;
+}
 
 
 

@@ -148,31 +148,40 @@ contactSection.appendChild(teaser);
 
 
     // SOCIAL NETWORK
+    const socialContainer = document.createElement("div")
+    socialContainer.className = "socialContainer"
+
+    const socialTitleContainer = document.createElement("div")
+    socialTitleContainer.className = "socialTitleContainer"
+    const socialMediaTitle = document.createElement("h3")
+    socialMediaTitle.textContent = "You can also find me on social networks"
+    const socialMediaSubtitle = document.createElement("h4")
+    socialMediaSubtitle.textContent = "Let's discuss your projects, ideas, and desires"
+    socialTitleContainer.appendChild(socialMediaTitle)
+    socialTitleContainer.appendChild(socialMediaSubtitle)
+    socialContainer.appendChild(socialTitleContainer)
+
     const socialMediaDiv = document.createElement('div');
     socialMediaDiv.className = "socialMediaDiv"
 
-    const socialMediaTitle = document.createElement("h3")
-    socialMediaTitle.textContent = "You can also find me on social networks"
+    socialMediaDiv.innerHTML = '<div><a href="https://www.linkedin.com/in/guillaume-estrade/" target="_blank">' +
+                               '<img class="socialIcon" src="icons/Social_Linkedin.svg" alt="LinkedIn"></a>' +
+                               '<div class="QRCode" id="linkedinQRCode"></div></div>' +
 
-    const socialMediaSubtitle = document.createElement("h4")
-    socialMediaSubtitle.textContent = "Let's discuss your projects, ideas, and desires"
+                               '<div><a href="https://github.com/GuillaumeSimplon" target="_blank">' +
+                               '<img class="socialIcon" src="icons/Skills_Github.svg"></a>' +
+                               '<div class="QRCode" id="githubQRCode"></div></div>' +
 
-    socialMediaDiv.innerHTML = '<a href="https://www.linkedin.com/in/guillaume-estrade/" target="_blank">' +
-                               '<img src="link_to_linkedin_icon" alt="LinkedIn"></a>' +
-                               '<a href="https://github.com/GuillaumeSimplon" target="_blank">' +
-                               '<img src="link_to_github_icon" alt="GitHub"></a>' +
-                               '<a href="https://www.instagram.com/guiomino/" target="_blank">' +
-                               '<img src="link_to_instagram_icon" alt="Instagram"></a>' +
-                               '<a href="https://www.guiomino.com/" target="_blank">' +
-                               '<img src="link_to_github_icon" alt="Novus"></a>' +
-                               '<br><br><div id="linkedinQRCode"></div>' +
-                               '<div id="githubQRCode"></div>' +
-                               '<div id="instagramQRCode"></div>' +
-                               '<div id="novusQRCode"></div>';
+                               '<div><a href="https://www.instagram.com/guiomino/" target="_blank">' +
+                               '<img class="socialIcon" src="icons/Social_Instagram.svg" alt="Instagram"></a>' +
+                               '<div class="QRCode" id="instagramQRCode"></div></div>' +
+
+                               '<div><a href="https://www.guiomino.com/" target="_blank">' +
+                               '<img class="socialIcon" src="icons/Skills_Wordpress.svg" alt="Novus"></a>' +
+                               '<div class="QRCode" id="novusQRCode"></div></div>';
     
-    socialMediaDiv.appendChild(socialMediaTitle)
-    socialMediaDiv.appendChild(socialMediaSubtitle)
-    document.getElementById('contactSectionId').appendChild(socialMediaDiv);
+    socialContainer.appendChild(socialMediaDiv)
+    contactSection.appendChild(socialContainer)
 
     // QR CODES
     new QRCode(document.getElementById("linkedinQRCode"), "https://www.linkedin.com/in/guillaume-estrade/");
@@ -180,7 +189,6 @@ contactSection.appendChild(teaser);
     new QRCode(document.getElementById("instagramQRCode"), "https://www.instagram.com/guiomino/");
     new QRCode(document.getElementById("novusQRCode"), "https://www.guiomino.com/");
 
-    form.appendChild(socialMediaDiv);
 
     // Fonction de validation du formulaire
     let submissionAttempts = 0;
