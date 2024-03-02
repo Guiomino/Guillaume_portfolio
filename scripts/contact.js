@@ -46,7 +46,6 @@ contactSection.appendChild(teaser);
         }
       });
     
-      // Déclencher l'événement blur pour masquer le label au chargement de la page
       inputElement.dispatchEvent(new Event('blur'));
     }
     
@@ -190,7 +189,7 @@ contactSection.appendChild(teaser);
     new QRCode(document.getElementById("novusQRCode"), "https://www.guiomino.com/");
 
 
-    // Fonction de validation du formulaire
+    // VALIDATE FORM FUNCTION
     let submissionAttempts = 0;
     const maxSubmissionAttempts = 2;
 
@@ -201,8 +200,6 @@ contactSection.appendChild(teaser);
       const message = document.getElementById('message').value;
       const recaptchaChecked = document.querySelector('input[name="recaptcha"]').checked;
       const contactReasons = document.querySelectorAll('input[name="reason"]:checked');
-
-
 
       // OPEN MODAL IF ERROR
       function showModal(title, message) {
@@ -265,14 +262,24 @@ contactSection.appendChild(teaser);
         return;
       }
 
-      submitButton.disabled = true;
-            setTimeout(() => {
-              submitButton.disabled = false;
-            }, 5000);
 
-            showModal("✅"+' Form submitted successfully !', 'Thanks ' + name);
+    submitButton.disabled = true;
+    submitButton.classList.add('processing');
+    document.body.classList.add('processingCursor');
+    setTimeout(() => {
+        submitButton.disabled = false;
+        submitButton.classList.remove('processing');
+        document.body.classList.remove('processingCursor');
+        form.reset();
+        
+        showModal("✉️" + ' Email initiation successful!', 'Thanks ' + name + '. Please check your outbox in your email client to confirm the actual sending of the email.');
+    }, 1500);
 
-            submissionAttempts = 0;
-    }
-  
-    
+    submissionAttempts = 0;
+
+    setTimeout(() => {
+        const mailtoLink = `mailto:estrade.guillaume.simplon@gmail.com?subject=From ${name}, to the attention of Guillaume via the portfolio contact form&body=Name: ${name}%0D%0AEmail: ${email}%0D%0APhone: ${phone}%0D%0AMessage: ${message}%0D%0AReasons: ${Array.from(contactReasons).map(reason => reason.value).join(', ')}`;
+
+        window.location.href = mailtoLink;
+    }, 3000);
+}

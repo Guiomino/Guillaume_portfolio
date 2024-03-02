@@ -252,6 +252,7 @@
     cursor: pointer;
     transition: 0.3s;
 }
+
 .socialMediaDiv a .socialIcon:hover {
     filter: hue-rotate(90deg);
     box-shadow: 4px 8px 12px #22EFFC;
@@ -334,4 +335,19 @@
     font-size: 16px;
     font-weight: 300;
     text-align: center;
+}
+
+
+.processing {
+    cursor: wait;
+    opacity: 0.3;
+}
+
+.processing:hover {
+    filter: none;
+    box-shadow: none;
+}
+
+.processingCursor {
+    cursor: wait;
 }
