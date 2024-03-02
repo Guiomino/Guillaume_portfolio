@@ -1,4 +1,4 @@
-.animation-container {
+.animationContainer {
     position: absolute;
     top: 15vh;
     left: 50%;
@@ -8,7 +8,7 @@
     z-index: -1;
 }
 
-.animation-container::before {
+.animationContainer::before {
     content: "";
     position: absolute;
     top: 0;
@@ -38,7 +38,7 @@
 
 
 
-.animation-container span {
+.animationContainer span {
     /* font-family: 'bodoni'; */
     /* font-family: 'Impact', 'Helvetica', 'arial', sans-serif; */
     font-weight: 900;

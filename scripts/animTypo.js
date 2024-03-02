@@ -29,7 +29,7 @@ const app = {
 
   initApp() {
     app.container = document.createElement('div');
-    app.container.className = 'animation-container';
+    app.container.className = 'animationContainer';
     document.body.appendChild(app.container);
     window.setInterval(app.add, 100);
   },

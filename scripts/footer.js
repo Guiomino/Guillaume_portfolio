@@ -21,11 +21,19 @@ document.addEventListener("DOMContentLoaded", () => {
   const linksHeading = document.createElement("h3");
   linksHeading.textContent = "Links";
   const linksList = document.createElement("ul");
-  ["Skills", "Services", "Contact"].forEach((linkText) => {
+
+  const pageLinks = [
+    { text: "Skills", href: "#skillsSectionId" },
+    { text: "Services", href: "#servicesSectionId" },
+    { text: "Projects", href: "#projectsSectionId" },
+    { text: "Contact", href: "#contactSectionId" }
+];
+
+pageLinks.forEach((linkInfo) => {
     const linkItem = document.createElement("li");
     const link = document.createElement("a");
-    link.href = "#" + linkText.toLowerCase();
-    link.textContent = linkText;
+    link.href = linkInfo.href;
+    link.textContent = linkInfo.text;
     linkItem.appendChild(link);
     linksList.appendChild(linkItem);
   });
@@ -95,6 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const socialLink = document.createElement("a");
     socialLink.href = socialItemMedia.url;
+    socialLink.target = "_blank";
     socialLink.textContent = socialItemMedia.text;
 
     socialItem.appendChild(socialLink);

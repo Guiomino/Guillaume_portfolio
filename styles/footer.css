@@ -6,17 +6,16 @@ footer {
     align-items: center;
     justify-content: center;
     position: relative;
-    /* background-color: rgb(97, 97, 97); */
 }
 
 .footerTop,
 .footerBottom {
     width: 100%;
+    max-width: 900px;
     display: flex;
     align-items: start;
     justify-content: center;
     gap: 100px;
-    width: 100%;
     padding: 20px;
 }
 
@@ -83,9 +82,14 @@ footer {
 
 .footerLinks,
 .footerSocialMedia {
+    width: 30%;
     display: flex;
     flex-direction: column;
     gap: 15px;
+}
+
+.footerLinks {
+    text-align: right;
 }
 
 .footerLinks h3,
@@ -128,7 +132,8 @@ footer {
 
 
 .logoAndDate {
-    width: 280px;
+    /* width: 280px; */
+    width: 40%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -145,6 +150,7 @@ footer {
     color: #22EFFC;
     font-weight: 400;
     text-align: center;
+    font-size: 15px;
 }
 
 .footerBottom p {
@@ -181,6 +187,11 @@ footer {
         align-items: center;
         justify-content: center;
         gap: 10px;
+    }
+
+    .footerLinks,
+    .footerSocialMedia {
+        text-align: center;
     }
 
     .footerSeparator {
