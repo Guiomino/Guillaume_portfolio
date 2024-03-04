@@ -10,15 +10,33 @@
 body {
   font-family: "Rubik", "Helvetica", sans-serif;
   color: #eee;
-  background: radial-gradient(#323D3E, #181818);
+  /* background: radial-gradient(#00aeff44, #11111199); */
+  background-image: -webkit-radial-gradient(top, circle cover, #00aeff44 15%, #00000088);
+  background-image: -moz-radial-gradient(top, circle cover, #00aeff44 15%, #00000088);
+  background-image: -o-radial-gradient(top, circle cover, #00aeff44 15%, #00000088);
+  background-image: radial-gradient(top, circle cover, #00aeff44 15%, #00000088);
+  background-color: #181818;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  transition: background-color 0.8s;
+}
+
+body.lightMode {
+  color: #333;
+  /* background: radial-gradient(#ffffff33, #11111199); */
+  background-image: -webkit-radial-gradient(top, circle cover, #ffffff33 15%, #00000088);
+  background-image: -moz-radial-gradient(top, circle cover, #ffffff33 15%, #00000088);
+  background-image: -o-radial-gradient(top, circle cover, #ffffff33 15%, #00000088);
+  background-image: radial-gradient(top, circle cover, #ffffff33 15%, #00000088);
+  background-color: #f3f3f3;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  transition: background-color 0.8s;
 }
 
 
-
 /* TITLES SECTIONS */
-.title {
+body .title {
   margin: 100px auto 20px;
   display: flex;
   gap: 20px;
@@ -41,14 +59,28 @@ body {
       transparent) 1 0%;
 }
 
-.title img {
+body.lightMode .title {
+  border-image:
+    linear-gradient(to right,
+      transparent,
+      #0471D7,
+      transparent) 1 0%;
+  color: #0471D7;
+  text-shadow: none;
+}
+
+body .title img {
   width: 40px;
   border: 1px solid #22EFFC;
   border-radius: 3px;
   padding: 10px;
 }
 
-.teaser {
+body.lightMode .title img {
+  filter: hue-rotate(64deg) saturate(1000%) brightness(70%);
+}
+
+body .teaser {
   width: 100%;
   max-width: 800px;
   margin: 0px auto 50px;

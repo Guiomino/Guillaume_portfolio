@@ -149,7 +149,7 @@ pageLinks.forEach((linkInfo) => {
 
   document.body.appendChild(footer);
 
-  // SCROLL TO TOP BUTTON FUNCTION()
+  // COPY CLIPBOARD FUNCTION()
   function copyToClipboard(email) {
     const dummyInput = document.createElement("input");
     document.body.appendChild(dummyInput);
@@ -159,7 +159,7 @@ pageLinks.forEach((linkInfo) => {
     document.body.removeChild(dummyInput);
   }
 
-  // UPDATE CCLIPBOARD COPY BUTTON FUNCTION()
+  // UPDATE CLIPBOARD COPY BUTTON FUNCTION()
   function updateButtonState(button) {
     button.textContent = "EMAIL ADDRESS COPIED ! ✅";
     setTimeout(() => {

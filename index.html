@@ -26,7 +26,7 @@
 
 <body>
 
-    <header>
+    <header class="darkMode">
         <button aria-label="toggle curtain navigation" class="nav_toggle">
             <span class="line L1"></span>
             <span class="line L2"></span>
@@ -36,9 +36,9 @@
 
         <div class="checkbox_wrapper">
             <input type="checkbox" id="switch">
-            <label for="switch">
-                <img src="icons/Moon.svg" alt="Switch Dark" class="moon">
-                <img src="icons/Sun.svg" alt="Switch Light" class="sun">
+            <label for="switch" class="switch-label">
+                <div class="moon"></div>
+                <div class="sun"></div>
             </label>
         </div>
 
@@ -52,11 +52,11 @@
         </aside>
     </header>
 
-    <section class="mainSection" id="mainSectionId"></section>
-    <section class="skillsSection" id="skillsSectionId"></section>
-    <section class="servicesSection" id="servicesSectionId"></section>
-    <section class="projectsSection" id="projectsSectionId"></section>
-    <section class="contactSection" id="contactSectionId">
+    <section class="mainSection darkMode" id="mainSectionId"></section>
+    <section class="skillsSection darkMode" id="skillsSectionId"></section>
+    <section class="servicesSection darkMode" id="servicesSectionId"></section>
+    <section class="projectsSection darkMode" id="projectsSectionId"></section>
+    <section class="contactSection darkMode" id="contactSectionId">
 
         <div class="modal_container">
             <div class="overlay modal_trigger"></div>
@@ -69,12 +69,13 @@
         </div>
 
     </section>
-    <footer></footer>
+    <footer class="darkMode"></footer>
 
+    <script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs/qrcode.min.js"></script>
+    <script type="module" src="scripts/darkLightMode.js"></script>
     <script type="module" src="scripts/nav.js"></script>
     <script type="module" src="scripts/api/fetch.js"></script>
     <script type="module" src="scripts/animTypo.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs/qrcode.min.js"></script>
     <script type="module" src="scripts/contact.js"></script>
     <script type="module" src="scripts/footer.js"></script>
 
