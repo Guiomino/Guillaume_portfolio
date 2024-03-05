@@ -8,7 +8,6 @@ const app = {
     'Playfair Display',    
     'Roboto Slab',
     'Josefin Sans',
-    // 'Lora'
     'poppins'
   ],
 

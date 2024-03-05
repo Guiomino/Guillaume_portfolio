@@ -39,12 +39,9 @@
 
 
 .animationContainer span {
-    /* font-family: 'bodoni'; */
-    /* font-family: 'Impact', 'Helvetica', 'arial', sans-serif; */
     font-weight: 900;
     position: absolute;
     color: #808080;
-    /* text-shadow: 0px 0px 8px black; */
     display: block;
     font-size: 18px;
     user-select: none;
@@ -79,5 +76,13 @@
     100% {
         opacity: 0;
         transform: none;
+    }
+}
+
+
+
+@media screen and (max-width: 900px) {
+    .animationContainer {
+        display: none;
     }
 }

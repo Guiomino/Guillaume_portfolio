@@ -45,30 +45,27 @@
 
 @media screen and (max-width: 800px) {
     .mainContainer {
-        width: 280px;
+        width: 100%;
     }
 
     .mainTitle {
         font-size: 34px;
-        text-align: left;
+        text-align: center;
     }
 
     .mainSubtitle {
         font-size: 28px;
-        text-align: left;
+        text-align: center;
     }
 
     .mainTeaser {
         font-size: 25px;
+        text-align: center;
     }
 }
 
 
 @media screen and (max-width: 500px) {
-    .mainContainer {
-        width: 280px;
-    }
-
     .mainTitle {
         font-size: 24px;
     }
@@ -79,6 +76,10 @@
 
     .mainTeaser {
         font-size: 15px;
+    }
+
+    .mainButtons {
+        flex-direction: column;
     }
 }
 
