@@ -22,8 +22,7 @@ function getSkills(skills) {
 
   skillsSection.appendChild(teaser);
 
-
-  // SKILLS LIST  
+  // SKILLS LIST
   skills[1].skillTable.forEach((skill) => {
     const cardSkills = document.createElement("div");
     cardSkills.className = "cardSkills";
@@ -33,10 +32,12 @@ function getSkills(skills) {
     skill.tools.forEach((tool) => {
       const listItem = document.createElement("li");
 
+      const iconElementContainer = document.createElement("div");
       const iconElement = document.createElement("img");
+      iconElementContainer.className = "iconSkills";
       iconElement.src = `./icons/${tool.icon}`;
-      iconElement.className = "iconSkills";
-      listItem.appendChild(iconElement);
+      iconElementContainer.appendChild(iconElement);
+      listItem.appendChild(iconElementContainer);
 
       const toolName = document.createElement("p");
       toolName.textContent = tool.name;

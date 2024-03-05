@@ -22,22 +22,24 @@ function getServices(services) {
   servicesSection.appendChild(teaser);
 
   // SERVICES LIST
-  const cardServicesContainer = document.createElement("div")
-  cardServicesContainer.className = "cardServicesContainer"
+  const cardServicesContainer = document.createElement("div");
+  cardServicesContainer.className = "cardServicesContainer";
   services[1].servicesTable.forEach((service) => {
     const cardServices = document.createElement("div");
     cardServices.className = "cardServices";
 
     const serviceTitle = document.createElement("div");
     serviceTitle.className = "serviceTitle";
-
+    const iconServiceContainer = document.createElement("div");
+    iconServiceContainer.className = "iconServiceContainer"
     const iconService = document.createElement("img");
     iconService.src = `./icons/${service.icon}`;
 
     const titleService = document.createElement("h3");
     titleService.textContent = service.title;
 
-    serviceTitle.appendChild(iconService);
+    iconServiceContainer.appendChild(iconService)
+    serviceTitle.appendChild(iconServiceContainer);
     serviceTitle.appendChild(titleService);
 
     cardServices.appendChild(serviceTitle);
@@ -61,7 +63,7 @@ function getServices(services) {
     });
 
     cardServices.appendChild(descriptionServices);
-    cardServicesContainer.appendChild(cardServices)
+    cardServicesContainer.appendChild(cardServices);
   });
   servicesSection.appendChild(cardServicesContainer);
 }

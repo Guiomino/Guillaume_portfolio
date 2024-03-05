@@ -21,19 +21,6 @@ body {
   transition: background-color 0.8s;
 }
 
-body.lightMode {
-  color: #333;
-  /* background: radial-gradient(#ffffff33, #11111199); */
-  background-image: -webkit-radial-gradient(top, circle cover, #ffffff33 15%, #00000088);
-  background-image: -moz-radial-gradient(top, circle cover, #ffffff33 15%, #00000088);
-  background-image: -o-radial-gradient(top, circle cover, #ffffff33 15%, #00000088);
-  background-image: radial-gradient(top, circle cover, #ffffff33 15%, #00000088);
-  background-color: #f3f3f3;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  transition: background-color 0.8s;
-}
-
 
 /* TITLES SECTIONS */
 body .title {
@@ -59,6 +46,48 @@ body .title {
       transparent) 1 0%;
 }
 
+body .title img {
+  width: 40px;
+  border: 1px solid #22EFFC;
+  border-radius: 3px;
+  padding: 10px;
+}
+
+
+
+body .teaser {
+  width: 100%;
+  max-width: 800px;
+  margin: 0px auto 50px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 10px;
+}
+
+
+
+
+
+
+
+
+
+/* ///// LIGHT MODE ///// */
+/* BODY */
+body.lightMode {
+  color: #333;
+  /* background: radial-gradient(#ffffff33, #11111199); */
+  background-image: -webkit-radial-gradient(top, circle cover, #ffffff33 15%, #00000088);
+  background-image: -moz-radial-gradient(top, circle cover, #ffffff33 15%, #00000088);
+  background-image: -o-radial-gradient(top, circle cover, #ffffff33 15%, #00000088);
+  background-image: radial-gradient(top, circle cover, #ffffff33 15%, #00000088);
+  background-color: #f3f3f3;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  transition: background-color 0.8s;
+}
+
 body.lightMode .title {
   border-image:
     linear-gradient(to right,
@@ -69,23 +98,161 @@ body.lightMode .title {
   text-shadow: none;
 }
 
-body .title img {
-  width: 40px;
-  border: 1px solid #22EFFC;
-  border-radius: 3px;
-  padding: 10px;
-}
-
 body.lightMode .title img {
-  filter: hue-rotate(64deg) saturate(1000%) brightness(70%);
+  filter: hue-rotate(64deg) saturate(2000%) brightness(90%);
 }
 
-body .teaser {
-  width: 100%;
-  max-width: 800px;
-  margin: 0px auto 50px;
-  text-align: center;
-  font-size: 16px;
-  font-weight: 500;
-  padding: 10px;
+
+/* NAV */
+body.lightMode header {
+  background: linear-gradient(to bottom, #c3c3c3 25%, #c3c3c3cc 50%, #c3c3c399 75%, #c3c3c300);
+}
+
+body.lightMode header img {
+  filter: hue-rotate(64deg) saturate(2000%) brightness(90%);
+}
+
+body.lightMode .line {
+  background-color: #0471D7;
+}
+
+body.lightMode nav {
+  /* background-color: #c3c3c3; */
+  background: linear-gradient(to bottom, #c3c3c3f8 80%, #c3c3c333);
+  border-right: 1px solid #0471D7;
+}
+
+body.lightMode nav a {
+  color: #333;
+}
+
+body.lightMode nav a:hover {
+  color: #fff;
+  background-color: #0471D7;
+}
+
+
+/* MAIN */
+body.lightMode .mainTitle {
+  color: #333;
+  text-shadow: none;
+}
+
+body.lightMode .mainSubtitle {
+  background: linear-gradient(to right, #0471D7 20%, #072695 50%, #6709C4 80%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+body.lightMode .mainTeaser {
+  color: #333;
+  text-shadow: -8px 10px 8px #0471D755, 0 -2px 1px #cee0f1, 0 2px 1px black;
+  letter-spacing: 10px;
+}
+
+body.lightMode .socialIcons a {
+  background-color: #0471D7;
+  border-radius: 5px;
+}
+
+body.lightMode .socialIcons img {
+  filter: grayscale(100%) brightness(600%);
+  border: 1px solid transparent;
+}
+
+body.lightMode .mainButtons a {
+  border: 1px solid transparent;
+  border-radius: 20px;
+  background-color: #0471D7;
+}
+
+body.lightMode .mainButtons a p {
+  color: #fff;
+}
+
+body.lightMode .mainButtons a img {
+  filter: grayscale(100%) brightness(600%);
+}
+
+
+/* SKILLS */
+body.lightMode .cardSkills {
+  border-top: #0471D7;
+  border-image:
+    linear-gradient(to right,
+      transparent,
+      #0471D7,
+      transparent) 1 0%;
+}
+
+body.lightMode .cardSkills::before {
+  background: radial-gradient(ellipse at top, #0471D730, transparent 66%),
+    radial-gradient(ellipse at bottom, transparent, transparent 66%);
+}
+
+body.lightMode .cardSkills h3 {
+  color: #333;
+}
+
+
+body.lightMode .cardSkills .iconSkills {
+  background-color: #0471D7;
+  border: 1px solid transparent;
+}
+
+body.lightMode .cardSkills .iconSkills img {
+  filter: grayscale(100%) brightness(600%);
+}
+
+body.lightMode .cardSkills li:hover {
+  background-color: #ffffff33;
+  border: 1px solid #0471D755;
+  color: #0471D7;
+}
+
+
+
+
+/* SERVICES */
+body.lightMode .cardServices {
+  background: linear-gradient(to top right, #00000022, #00000000 75%);
+  border: 1px solid #0471D755;
+  box-shadow: 0px 5px 15px 2px #00000022;
+}
+
+body.lightMode.cardServices:nth-of-type(2) {
+  background: linear-gradient(to bottom left, #00000022, #22EFFC00, #00000022);
+}
+
+body.lightMode.cardServices:nth-of-type(3) {
+  background: linear-gradient(to bottom right, #00000022, #22EFFC00 40%);
+}
+
+body.lightMode.cardServices:nth-of-type(4) {
+  background: linear-gradient(to top left, #00000022, #22EFFC00 66%, #00000022);
+}
+
+body.lightMode .cardServices::before {
+  background-color: #ffffff55;
+}
+
+body.lightMode .iconServiceContainer {
+  border: 1px solid transparent;
+  background-color: #0471D7;
+}
+
+body.lightMode .iconServiceContainer img {
+  filter: grayscale(100%) brightness(600%);
+  border: 1px solid transparent;
+}
+
+body.lightMode .cardServices h3 {
+  color: #0471D7;
+}
+
+body.lightMode .cardServices span {
+  color: #fff;
+  border: 1px solid transparent;
+  background-color: #0471D7;
 }
