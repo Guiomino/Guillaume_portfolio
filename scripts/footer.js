@@ -2,13 +2,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const footer = document.createElement("footer");
 
   // SCROLL TO TOP BUTTON
-  const scrollToTopBtn = document.createElement("img");
+  const scrollToTopBtn = document.createElement("div");
   scrollToTopBtn.className = "scrollToTopBtn";
-  scrollToTopBtn.src = "icons/Footer_ArrowTop.svg";
-  scrollToTopBtn.addEventListener("click", () => {
+  const scrollToTopIcon = document.createElement("img");
+  scrollToTopIcon.src = "icons/Footer_ArrowTop.svg";
+  scrollToTopIcon.addEventListener("click", () => {
     document.documentElement.scrollTop = 0;
     document.body.scrollTop = 0;
   });
+  scrollToTopBtn.appendChild(scrollToTopIcon);
   footer.appendChild(scrollToTopBtn);
 
   // TOP CONTAINER

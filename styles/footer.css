@@ -162,9 +162,7 @@ footer {
 
 
 .scrollToTopBtn {
-    width: 30px;
-    height: 30px;
-    padding: 8px;
+    padding: 6px;
     border: 1px solid #22EFFC;
     border-radius: 5px;
     position: absolute;
@@ -172,7 +170,16 @@ footer {
     top: 66%;
     transition: 0.3s;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+.scrollToTopBtn img {
+    width: 18px;
+    height: 18px;
+}
+
 
 .scrollToTopBtn:hover {
     filter: hue-rotate(90deg);
