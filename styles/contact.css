@@ -243,17 +243,23 @@
     gap: 30px;
 }
 
-.socialMediaDiv a .socialIcon {
-    width: 40px;
-    height: 40px;
+.socialMediaDiv a {
     padding: 10px;
     border: 1px solid #22EFFC;
     border-radius: 3px;
     cursor: pointer;
     transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.socialMediaDiv a .socialIcon:hover {
+.socialMediaDiv a .socialIcon {
+    width: 20px;
+    height: 20px;
+}
+
+.socialMediaDiv a:hover {
     filter: hue-rotate(90deg);
     box-shadow: 4px 8px 12px #22EFFC;
 }

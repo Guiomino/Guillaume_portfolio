@@ -28,9 +28,12 @@ function getProjects(projects) {
     const projectTitleContainer = document.createElement("div");
     projectTitleContainer.className = "projectTitleContainer";
 
+    const projectIconContainer = document.createElement("div");
+    projectIconContainer.className = "projectIconContainer";
     const projectIcon = document.createElement("img");
     projectIcon.src = `./icons/${project.icon}`;
-    projectTitleContainer.appendChild(projectIcon);
+    projectIconContainer.appendChild(projectIcon);
+    projectTitleContainer.appendChild(projectIconContainer);
 
     const projectTitle = document.createElement("h3");
     projectTitle.textContent = project.title;
@@ -52,7 +55,7 @@ function getProjects(projects) {
     toolTitle.appendChild(toolNumbering);
     toolTitle.appendChild(toolText);
     projectDetailsTool.appendChild(toolTitle);
-    
+
     const img = document.createElement("img");
     img.src = `./images/${project.img}`;
     projectDetailsTool.appendChild(img);

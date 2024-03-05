@@ -73,7 +73,12 @@ body .teaser {
 
 
 
-/* ///// LIGHT MODE ///// */
+
+
+
+
+
+/* ////////////////////////////// LIGHT MODE ////////////////////////////// */
 /* BODY */
 body.lightMode {
   color: #333;
@@ -217,7 +222,7 @@ body.lightMode .cardSkills li:hover {
 /* SERVICES */
 body.lightMode .cardServices {
   background: linear-gradient(to top right, #00000022, #00000000 75%);
-  border: 1px solid #0471D755;
+  border: 1px solid #ffffff33;
   box-shadow: 0px 5px 15px 2px #00000022;
 }
 
@@ -255,4 +260,121 @@ body.lightMode .cardServices span {
   color: #fff;
   border: 1px solid transparent;
   background-color: #0471D7;
+}
+
+
+/* PROJECTS */
+body.lightMode .cardProjects {
+  background-color: #ffffff11;
+  border: 1px solid #ffffff33;
+}
+
+body.lightMode .cardProjects:hover {
+  background-color: #ffffff33;
+}
+
+body.lightMode .projectIconContainer {
+  border: 1px solid transparent;
+  background-color: #0471D7;
+}
+
+body.lightMode .projectIconContainer img {
+  filter: grayscale(100%) brightness(600%);
+  border: 1px solid transparent;
+}
+
+body.lightMode .projectTitleContainer h3 {
+  color: #0471D7;
+}
+
+body.lightMode .tools div span,
+body.lightMode .description div span,
+body.lightMode .challenges div span {
+  color: #fff;
+  border: 1px solid transparent;
+  background-color: #0471D7;
+}
+
+
+/* CONTACT */
+body.lightMode .contactSection span {
+  color: #0471D7;
+}
+
+body.lightMode .personalInfoContainer {
+  background: linear-gradient(to top right, #ffffff22, #ffffff00 75%);
+}
+
+body.lightMode .contactReasonsContainer {
+  background: linear-gradient(to bottom left, #ffffff22, #ffffff00, #ffffff22);
+}
+
+body.lightMode .submitContainer {
+  background: linear-gradient(to bottom right, #ffffff22, #ffffff00 40%);
+}
+
+body.lightMode .socialContainer {
+  background: linear-gradient(to top left, #ffffff22, #ffffff00 66%, #ffffff22);
+}
+
+body.lightMode .personalInfoContainer,
+body.lightMode .contactReasonsContainer,
+body.lightMode .submitContainer,
+body.lightMode .socialContainer {
+  border: 1px solid #ffffff33;
+  box-shadow: 0px 3px 12px #00000033;
+}
+
+body.lightMode .socialContainer h4 {
+  color: #0471D7;
+}
+
+body.lightMode .personalInfoDiv input,
+body.lightMode .messageDiv input,
+body.lightMode .messageDiv textarea,
+body.lightMode .recaptchaDiv label {
+  background-color: #ffffff33;
+  border: 1px solid #ffffff55;
+  box-shadow: 0px 3px 8px #00000022;
+  color: #333;
+}
+
+body.lightMode .personalInfoDiv .labelDisplay,
+body.lightMode .messageDiv .labelDisplay {
+  color: #555;
+}
+
+body.lightMode .labelDisplay.filledInput {
+  color: #0471D7;
+}
+
+body.lightMode .contactReasonsDiv input[type="checkbox"],
+body.lightMode .recaptchaDiv input[type="checkbox"] {
+  accent-color: #0471D7;
+}
+
+
+body.lightMode .submitButton {
+  color: #fff;
+  background-color: #0471D7;
+  border: 1px solid #ffffff55;
+}
+
+body.lightMode .submitButton:hover {
+  filter: hue-rotate(-90deg);
+}
+
+body.lightMode .submitButton img {
+  filter: grayscale(100%) brightness(600%);
+}
+
+
+body.lightMode .socialMediaDiv a {
+  border: 1px solid transparent;
+  background-color: #0471D7;
+}
+
+body.lightMode .socialMediaDiv a .socialIcon {
+  filter: grayscale(100%) brightness(600%);
+  border: 1px solid transparent;
 }

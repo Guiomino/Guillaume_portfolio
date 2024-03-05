@@ -82,8 +82,8 @@
     gap: 10px;
     width: 200px;
     padding: 10px;
-    transition: 0.3s;
     border: 1px solid transparent;
+    transition: 2s;
 }
 
 .cardSkills .iconSkills {
@@ -110,4 +110,5 @@
     border: 1px solid #22EFFC55;
     border-radius: 3px;
     color: #22EFFC;
+    transition: 0.3s;
 }
