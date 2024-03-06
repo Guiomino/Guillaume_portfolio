@@ -8,7 +8,11 @@ function getMain(main) {
       mainContainer.className = "mainContainer";
       const title = document.createElement("h1");
       title.className = "mainTitle";
-      title.textContent = item.title;
+
+      const spanElement = document.createElement("span");
+      spanElement.dataset.text = "Hello to you !";
+      spanElement.textContent = item.title;
+      title.appendChild(spanElement);
 
       const subtitle = document.createElement("h2");
       subtitle.className = "mainSubtitle";
@@ -58,8 +62,16 @@ function getMain(main) {
 
     // CTA
     const mainButtons = [
-      { img: "./icons/Projects.svg", text: "Projects", href: "#projectsSectionId" },
-      { img: "./icons/Contact.svg", text: "Contact", href: "#contactSectionId" },
+      {
+        img: "./icons/Projects.svg",
+        text: "Projects",
+        href: "#projectsSectionId",
+      },
+      {
+        img: "./icons/Contact.svg",
+        text: "Contact",
+        href: "#contactSectionId",
+      },
     ];
     const mainButtonsContainer = document.createElement("div");
     mainButtonsContainer.className = "mainButtons";

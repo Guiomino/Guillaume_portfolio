@@ -11,7 +11,8 @@ function updateProgressBar() {
     document.documentElement.scrollHeight - window.innerHeight;
   const scrolled = window.scrollY;
   const progress = (scrolled / scrollHeight) * 100;
-  progressBar.style.width = `${progress}%`;
+
+  progressBar.style.width = `${Math.max(100 - progress, 0)}%`;
 }
 
 window.addEventListener("scroll", updateProgressBar);

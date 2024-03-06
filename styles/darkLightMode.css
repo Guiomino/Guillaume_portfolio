@@ -29,12 +29,13 @@ body.lightMode .animationContainer::before {
 
 /* PROGRESS BAR */
 body.lightMode .progressBarContainer {
-  background-color: #888;
+  background: linear-gradient(to left, #0471D7 20%, #072695 50%, #6709C4 80%);
 }
 
 body.lightMode .progressBar {
-  background-color: #0471D7;
+  background-color: #aaa;
 }
+
 
 /* NAV */
 body.lightMode header {
@@ -67,8 +68,20 @@ body.lightMode nav a:hover {
 
 /* MAIN */
 body.lightMode .mainTitle {
-  color: #333;
-  text-shadow: none;
+  color: #fff;
+  text-shadow: 3px 1px 1px #268ceb, 2px 2px 1px #022342, 4px 2px 1px #268ceb,
+    3px 3px 1px #022342, 5px 3px 1px #268ceb, 4px 4px 1px #022342,
+    6px 4px 1px #268ceb, 5px 5px 1px #022342, 7px 5px 1px #268ceb,
+    6px 6px 1px #022342, 8px 6px 1px #268ceb, 15px 15px 10px #333;
+}
+
+body.lightMode .mainTitle span::before {
+  text-shadow: 2px 2px 1px #e94a4a, -1px -1px 1px #f936ae,
+    -2px 2px 1px #e94a4a, 1px -1px 1px #f936ae;
+}
+
+body.lightMode .mainTitle:hover {
+  transform: rotate(-1deg);
 }
 
 body.lightMode .mainSubtitle {
@@ -80,8 +93,7 @@ body.lightMode .mainSubtitle {
 
 body.lightMode .mainTeaser {
   color: #333;
-  text-shadow: -8px 10px 8px #0471D755, 0 -2px 1px #cee0f1, 0 2px 1px black;
-  letter-spacing: 10px;
+  text-shadow: none;
 }
 
 body.lightMode .socialIcons a {

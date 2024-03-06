@@ -69,12 +69,13 @@ body .teaser {
   left: 0;
   width: 100%;
   height: 6px;
-  background-color: #333;
+  background: linear-gradient(to left, #47f7c2, #3ff1fd 20%, #369bfa, #8759f5 80%);
   z-index: 9999;
+  rotate: 180deg;
 }
 
 .progressBar {
   height: 100%;
-  background-color: #22EFFC;
+  background-color: #333;
   transition: width 0.3s ease;
 }

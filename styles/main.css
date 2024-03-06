@@ -16,31 +16,56 @@
 .mainTitle,
 .mainSubtitle {
     text-align: right;
-    font-weight: 800;
     text-transform: uppercase;
 }
 
 .mainTitle {
-    font-size: 48px;
-    text-shadow: 0px 0px 8px #22EFFC;
+    font-family: 'poppins';
+    font-weight: 900;
+    transform: skew(0deg, -5deg);
+    width: 100%;
+    text-align: left;
+    text-transform: uppercase;
+    font-size: 60px;
+    color: #fde9ff;
+    text-shadow: 3px 1px 1px #22EFFC, 2px 2px 1px #044e48, 4px 2px 1px #22EFFC,
+        3px 3px 1px #044e48, 5px 3px 1px #22EFFC, 4px 4px 1px #044e48,
+        6px 4px 1px #22EFFC, 5px 5px 1px #044e48, 7px 5px 1px #22EFFC,
+        6px 6px 1px #044e48, 8px 6px 1px #22EFFC, 15px 15px 10px black;
+    letter-spacing: 6px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.mainTitle span {
+    display: block;
+    position: relative;
+}
+
+.mainTitle span::before {
+    content: attr(data-text);
+    position: absolute;
+    text-shadow: 2px 2px 1px #e94aa1, -1px -1px 1px #c736f9,
+        -2px 2px 1px #e94aa1, 1px -1px 1px #f736f9;
+    z-index: 1;
+}
+
+.mainTitle:hover {
+    transform: rotate(-1deg);
 }
 
 .mainSubtitle {
-    font-size: 36px;
-    background: linear-gradient(to right, #22FCBB, #22EFFC 20%, #2293FC, #2252FC 80%);
+    font-size: 40px;
+    font-weight: 800;
+    background: linear-gradient(to right, #47f7c2, #3ff1fd 20%, #369bfa, #8759f5 80%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .mainTeaser {
-    width: 100%;
-    text-align: left;
-    text-transform: uppercase;
     font-size: 30px;
-    color: #22EFFC;
-    text-shadow: -8px 10px 8px #09dbca91, 0 -2px 1px #ffffff, 0 2px 1px black;
-    letter-spacing: 10px;
+    text-shadow: 0px 0px 8px #22EFFC;
 }
 
 @media screen and (max-width: 800px) {
