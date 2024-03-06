@@ -5,8 +5,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const scrollToTopBtn = document.createElement("div");
   scrollToTopBtn.className = "scrollToTopBtn";
   const scrollToTopIcon = document.createElement("img");
+
   scrollToTopIcon.src = "icons/Footer_ArrowTop.svg";
-  scrollToTopIcon.addEventListener("click", () => {
+  scrollToTopBtn.addEventListener("click", () => {
     document.documentElement.scrollTop = 0;
     document.body.scrollTop = 0;
   });
